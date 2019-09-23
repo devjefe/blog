@@ -4,28 +4,28 @@
   </a>
 </p>
 <h1 align="center">
-  Starter for the official Gatsby blog theme
+  Starter for the official Gatsby blog and notes themes.
 </h1>
 
-Quickly get started using the Gatsby blog theme! This starter creates a new Gatsby site that is preconfigured to work with the [official Gatsby blog theme](https://www.npmjs.com/package/gatsby-theme-blog).
+Quickly get started using the Gatsby blog theme, and notes theme, together! This starter creates a new Gatsby site that is preconfigured to work with the [blog theme](https://www.npmjs.com/package/gatsby-theme-blog) and the [notes theme](https://www.npmjs.com/package/gatsby-theme-notes), in harmony.
 
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the blog theme starter.
+    Use the Gatsby CLI to create a new site, specifying this theme starter.
 
-    ```sh
-    # create a new Gatsby site using the blog theme starter
-    gatsby new my-themed-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
+    ```shell
+    # create a new Gatsby site using this theme starter
+    gatsby new my-themed-site https://github.com/gatsbyjs/gatsby-starter-theme
     ```
 
 2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
-    ```sh
-    cd my-themed-blog/
+    ```shell
+    cd my-themed-site/
     gatsby develop
     ```
 
@@ -33,38 +33,42 @@ Quickly get started using the Gatsby blog theme! This starter creates a new Gats
 
     Your site is now running at `http://localhost:8000`!
 
-    To get started, check out the guide to [using the Gatsby blog theme starter](http://gatsbyjs.org/docs/themes/using-a-gatsby-theme), or the longer, [more detailed tutorial](http://gatsbyjs.org/tutorial/using-a-theme).
+    To get started, check out the guide to [getting started with using multiple themes](http://gatsbyjs.org/docs/themes/using-a-gatsby-theme), or the [general themes docs](http://gatsbyjs.org/docs/themes).
 
 ## 🧐 What's inside?
 
-Here are the top-level files and directories you'll see in a site created using the blog theme starter:
+Here are the top-level files and directories you'll see in a site created using this theme starter.
 
 ```
-gatsby-starter-blog-theme
+gatsby-starter-theme
 ├── content
 │ ├── assets
-│ │ └── avatar.png
+│ │ └── avatar.jpg
+│ ├── notes
+│ │ ├── example-dir
+│ │ │ └── hi.mdx
+│ │ └── hello.mdx
 │ └── posts
 │ ├── hello-world.mdx
-│ └── my-second-post.mdx
+│ ├── my-second-post.mdx
+│ └── new-beginnings.mdx
 ├── src
-│ └── gatsby-theme-blog
-│ ├── components
-│ │ └── bio-content.js
-│ └── gatsby-theme-ui
-│ └── colors.js
+│ ├── gatsby-theme-blog
+│ │ └── components
+│ │ └── header.js
+│ └── gatsby-theme-notes
+│ └── components
+│ └── layout.js
 ├── .gitignore
 ├── .prettierrc
 ├── gatsby-config.js
 ├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.md
+└── package.json
 ```
 
-1.  **`/content`**: A content folder holding assets that the theme expects to exist. This will vary from theme to theme -- this starter is set up to get you started with the blog theme, which expects an image asset for your avatar, and blog post content. Replace the avatar image file, delete the demo posts, and add your own!
+1.  **`/content`**: A content folder holding assets that the blog and notes themes expect to exist. Check out the README for each theme to learn more about the demo content.
 
-2.  **`/src`**: You will probably want to customize your site to personalize it. The files under `/src/gatsby-theme-blog` _shadow_, or override, the files of the same name in the `gatsby-theme-blog` package. To learn more about this, check out the [guide to getting started with using the blog theme starter](http://gatsbyjs.org/docs/themes/using-a-gatsby-theme).
+2.  **`/src`**: You will probably want to customize your site to personalize it. The files under `/src/gatsby-theme-blog` and `/src/gatsby-theme-notes` _shadow_, or override the files of the same name in their respective packages. To learn more about this, check out the [guide to getting started with using the blog theme starter](http://gatsbyjs.org/docs/themes/using-a-gatsby-theme).
 
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
@@ -94,5 +98,4 @@ Here are some places to start:
 
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Reference Guides_ and _Gatsby API_ sections in the sidebar.
-# blog
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
