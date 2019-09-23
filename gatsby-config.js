@@ -4,14 +4,26 @@ module.exports = {
       resolve: `gatsby-theme-notes`,
       options: {
         mdx: true,
-        basePath: `/notes`
-      }
+        basePath: `/notes`,
+      },
     },
     // with gatsby-plugin-theme-ui, the last theme in the config
     // will override the theme-ui context from other themes
-    { resolve: `gatsby-theme-blog` }
+    { resolve: `gatsby-theme-blog` },
   ],
   siteMetadata: {
-    title: `Jeff Cameron`
-  }
-};
+    title: `Jeff Cameron`,
+    author: `Jeff Cameron`,
+    description: `Front End Development...`,
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/devjefe`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/jcameronjeff`,
+      },
+    ],
+  },
+}
