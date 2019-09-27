@@ -3,19 +3,22 @@ title: "3 Reasons I love Gatsby JS Themes"
 date: 2019-09-27
 ---
 
-In July 2019, Gatsby announced the <a href='https://www.gatsbyjs.org/blog/2019-07-03-announcing-stable-release-gatsby-themes/#reach-skip-nav'> stable release </a> of Gatsby themes an effort lef by Gatsby contractor <a href="https://twitter.com/@chrisbiscardi">Chris Biscardi.</a> Why should you care? Read on...
+In July 2019, Gatsby announced the <a href='https://www.gatsbyjs.org/blog/2019-07-03-announcing-stable-release-gatsby-themes/#reach-skip-nav'> stable release </a> of Gatsby themes -- an effort lef by Gatsby contractor <a href="https://twitter.com/@chrisbiscardi">Chris Biscardi.</a> Why should you care? Read on...
 
 ---
 
 ### 1) Automated dependency updates
 
-Up till now, if we want to quickly scaffold a new Gatsby site, we've had <a href='https://www.gatsbyjs.org/docs/starters/'> starters</a>. Whether you are new to Gatsby or just want to save all the leg work of creating the architecture, starters give you a great leg up.
+_'Using a Gatsby theme, all of your default configuration (shared functionality, data sourcing, design) is abstracted out of your site, and into an installable package.'_ <br />
+_Chris Biscardi_
+
+Until now, we've had to rely on <a href='https://www.gatsbyjs.org/docs/starters/'> starters</a> for scaffolding Gatsby projects.
+
+Whether you are new to Gatsby or just want to save all the leg work of creating the architecture, starters give you a great leg up.
 
 However, your app can quickly get out of date with stale dependencies and features, and the only real way to update is manually.
 
-Alternatively, a Gatsby theme is resolved through your package manager. Updating core dependencies is a matter of bumping a version in your package.json.
-
-Or as Biscardi puts it, 'Using a Gatsby theme, all of your default configuration (shared functionality, data sourcing, design) is abstracted out of your site, and into an installable package.'
+Gatsby themes are resolved through your package manager. Updating core dependencies is a matter of bumping a version in your package.json.
 
 ```js
 module.exports = {
@@ -23,13 +26,17 @@ module.exports = {
 }
 ```
 
+---
+
 ### 2) MDX
 
-<a href='https://mdxjs.com/'>MDX</a>, also developed by Chris Biscardi, is basically JSX in markdown.
+_'MDX is an authorable format that lets you seamlessly use JSX in your markdown documents.'_ [mdx github](https://github.com/mdx-js/mdx)
+
+[MDX]('https://mdxjs.com/') -- Simply put -- is JSX in markdown.
 
 When I set out to build a design system at my day job, MDX changed my life.
 
-I began using MDX to document my components, but now I can't seem to build a site without it.
+For several months I banged my head against my desk trying to wire up rehypeReact with dangerouslySetInnerHTML to render a code snippet and component demo in my markdon.
 
 ```jsx
 import AwesomeComponent from "./AwesomeComponent"
@@ -39,18 +46,42 @@ import AwesomeComponent from "./AwesomeComponent"
     <AwesomeComponent>{children}</AwesomeComponent>
 ```
 
+Whilest browsing the web for large buildings to leap from, I discovered the miracle of Biscardi's gatsby-mdx plugin. But I digress...
+
+With [Gatsby-theme-blog-core](https://github.com/gatsbyjs/gatsby/tree/master/themes/gatsby-theme-blog-core), you don't even need to configure(or maintain) a plugin to use MDX in your Gatsby project. Just As a past user of both 'gatsby-mdx' (now deprecated) and 'gatsby-plugin-mdx', this is extremely refreshing.
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        // basePath defaults to `/`
+        basePath: `/blog`,
+      },
+    },
+  ],
+}
+```
+
+---
+
 ### 3) Component Shadowing
 
 This is where themes get _really_ cool.
 
 Component shadowing 'allows users to replace a file in the src directory that is included in the webpack bundle with their own implementation.'
 
+<img src="../assets/shadowing.png" alt="shadowing" />
+
 Don't quite like the out of the box theme Header? Wish you could add/remove/replace a feature? No longer do you have to adopt a 'take it or leave it' approach to a component, just create a file with the same name in the same directory tree and modify it to your heart's content.
 
 ### Related
 
-1. Getting started with Gatsby Themes (Coming Soon)
-2. Building a custom Gatsby Theme (Coming Soon)
+- Getting started with Gatsby Themes (Coming Soon)
+- Component Shadowing in Gatsby Themes (Coming Soon)
+- Building a custom Gatsby Theme (Coming Soon)
 
 #### Links
 
