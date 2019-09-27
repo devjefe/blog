@@ -36,7 +36,7 @@ _'MDX is an authorable format that lets you seamlessly use JSX in your markdown 
 
 When I set out to build a design system at my day job, MDX changed my life.
 
-For several months I banged my head against my desk trying to wire up rehypeReact with dangerouslySetInnerHTML to render a code snippet and component demo in my markdon.
+For several months I banged my head against my desk trying to wire up rehypeReact with dangerouslySetInnerHTML to render a code snippet and component demo in my markdown.
 
 ```jsx
 import AwesomeComponent from "./AwesomeComponent"
@@ -46,9 +46,11 @@ import AwesomeComponent from "./AwesomeComponent"
     <AwesomeComponent>{children}</AwesomeComponent>
 ```
 
-Whilest browsing the web for large buildings to leap from, I discovered the miracle of Biscardi's gatsby-mdx plugin. But I digress...
+Whilest perusing Google search results for large buildings to leap from, I stumbled across the miracle of Biscardi's gatsby-mdx plugin. But I digress...
 
 With [Gatsby-theme-blog-core](https://github.com/gatsbyjs/gatsby/tree/master/themes/gatsby-theme-blog-core), you don't even need to configure(or maintain) a plugin to use MDX in your Gatsby project. Just As a past user of both 'gatsby-mdx' (now deprecated) and 'gatsby-plugin-mdx', this is extremely refreshing.
+
+Just flick that boolean to true and you're off to the races.
 
 ```js
 // gatsby-config.js
@@ -57,8 +59,8 @@ module.exports = {
     {
       resolve: `gatsby-theme-blog-core`,
       options: {
-        // basePath defaults to `/`
-        basePath: `/blog`,
+        // ...options
+        mdx: true,
       },
     },
   ],
