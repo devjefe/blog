@@ -1,0 +1,61 @@
+---
+title: "3 Reasons I love Gatsby JS Themes"
+date: 2019-09-27
+---
+
+In July 2019, Gatsby announced the <a href='https://www.gatsbyjs.org/blog/2019-07-03-announcing-stable-release-gatsby-themes/#reach-skip-nav'> stable release </a> of Gatsby themes an effort lef by Gatsby contractor <a href="https://twitter.com/@chrisbiscardi">Chris Biscardi.</a> Why should you care? Read on...
+
+---
+
+### 1) Automated dependency updates
+
+Up till now, if we want to quickly scaffold a new Gatsby site, we've had <a href='https://www.gatsbyjs.org/docs/starters/'> starters</a>. Whether you are new to Gatsby or just want to save all the leg work of creating the architecture, starters give you a great leg up.
+
+However, your app can quickly get out of date with stale dependencies and features, and the only real way to update is manually.
+
+Alternatively, a Gatsby theme is resolved through your package manager. Updating core dependencies is a matter of bumping a version in your package.json.
+
+Or as Biscardi puts it, 'Using a Gatsby theme, all of your default configuration (shared functionality, data sourcing, design) is abstracted out of your site, and into an installable package.'
+
+```js
+module.exports = {
+  plugins: ["gatsby-theme-blog", "gatsby-theme-notes"],
+}
+```
+
+### 2) MDX
+
+<a href='https://mdxjs.com/'>MDX</a>, also developed by Chris Biscardi, is basically JSX in markdown.
+
+When I set out to build a design system at my day job, MDX changed my life.
+
+I began using MDX to document my components, but now I can't seem to build a site without it.
+
+```jsx
+import AwesomeComponent from "./AwesomeComponent"
+
+## Check out my awesome component!
+
+    <AwesomeComponent>{children}</AwesomeComponent>
+```
+
+### 3) Component Shadowing
+
+This is where themes get _really_ cool.
+
+Component shadowing 'allows users to replace a file in the src directory that is included in the webpack bundle with their own implementation.'
+
+Don't quite like the out of the box theme Header? Wish you could add/remove/replace a feature? No longer do you have to adopt a 'take it or leave it' approach to a component, just create a file with the same name in the same directory tree and modify it to your heart's content.
+
+### Related
+
+1. Getting started with Gatsby Themes (Coming Soon)
+2. Building a custom Gatsby Theme (Coming Soon)
+
+#### Links
+
+https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/
+
+https://github.com/mdx-js/mdx
+
+https://github.com/gatsbyjs/gatsby-starter-theme
